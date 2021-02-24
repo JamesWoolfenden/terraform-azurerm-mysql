@@ -1,23 +1,23 @@
-# terraform-azurerm-sql
+# terraform-azurerm-mysql
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-azurerm-sql/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-azurerm-sql)
-[![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-azurerm-sql.svg)](https://github.com/JamesWoolfenden/terraform-azurerm-sql/releases/latest)
-[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-azurerm-sql.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-azurerm-sql/releases/latest)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-azurerm-mysql/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-azurerm-mysql)
+[![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-azurerm-mysql.svg)](https://github.com/JamesWoolfenden/terraform-azurerm-mysql/releases/latest)
+[![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-azurerm-mysql.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-azurerm-mysql/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/JamesWoolfenden/terraform-azurerm-sql/cis_aws)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-azurerm-sql&benchmark=CIS+AWS+V1.2)
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/JamesWoolfenden/terraform-azurerm-mysql/cis_aws)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-azurerm-mysql&benchmark=CIS+AWS+V1.2)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![checkov](https://img.shields.io/badge/checkov-verified-brightgreen)](https://www.checkov.io/)
-[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-azurerm-sql/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-azurerm-sql&benchmark=INFRASTRUCTURE+SECURITY)
+[![Infrastructure Tests](https://www.bridgecrew.cloud/badges/github/jameswoolfenden/terraform-azurerm-mysql/general)](https://www.bridgecrew.cloud/link/badge?vcs=github&fullRepo=JamesWoolfenden%2Fterraform-azurerm-mysql&benchmark=INFRASTRUCTURE+SECURITY)
 
 This is module to help you deploy SQL ON AZURE.
 
 ## Usage
 
-Add **module.sql.tf** to your Terraform code:
+Add **module.mysql.tf** to your Terraform code:
 
 ```terraform
 module "sql" {
-  source         = "JamesWoolfenden/sql/azure"
+  source         = "JamesWoolfenden/mysql/azure"
   version        = "0.0.2"
   resource_group = azurerm_resource_group.examplea
   database_name  = "mydatabase"
@@ -40,7 +40,6 @@ No requirements.
 | Name | Version |
 |------|---------|
 | azurerm | n/a |
-| random | n/a |
 
 ## Modules
 
@@ -50,25 +49,26 @@ No Modules.
 
 | Name |
 |------|
-| [azurerm_mssql_database_extended_auditing_policy](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mssql_database_extended_auditing_policy) |
-| [azurerm_sql_database](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/sql_database) |
-| [azurerm_sql_server](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/sql_server) |
-| [azurerm_storage_account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account) |
-| [random_password](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) |
+| [azurerm_mysql_database](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mysql_database) |
+| [azurerm_mysql_server](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mysql_server) |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | account\_replication\_type | n/a | `string` | `"LRS"` | no |
-| account\_tier | n/a | `string` | `"standard"` | no |
-| administrator\_login\_password | n/a | `string` | `""` | no |
-| audit\_retention\_in\_days | Retention period for Audit logs in days | `number` | `90` | no |
+| account\_tier | n/a | `string` | `"Standard"` | no |
+| admin\_name | n/a | `string` | `"mysqladminun"` | no |
+| auditstore | n/a | `string` | `"exampleaaudit"` | no |
 | common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
-| database\_name | n/a | `string` | n/a | yes |
-| resource\_group | Object that contains resource group details | `any` | n/a | yes |
-| sql | n/a | `map` | <pre>{<br>  "administrator_login": "sqlman",<br>  "minimum_tls_version": "1.2",<br>  "name": "mymssqlserver",<br>  "public_network_access_enabled": false,<br>  "version": "12.0"<br>}</pre> | no |
-| sql\_server | n/a | `string` | n/a | yes |
+| database\_name | n/a | `string` | `"exampleadatabase"` | no |
+| email\_addresses | n/a | `list` | `[]` | no |
+| mysqlserver\_name | n/a | `string` | n/a | yes |
+| password | n/a | `any` | n/a | yes |
+| resource\_group | To supply an Azure resource group object | `any` | n/a | yes |
+| server\_version | n/a | `string` | `"5.7"` | no |
+| sku\_name | n/a | `string` | `"GP_Gen5_2"` | no |
+| storage\_mb | n/a | `number` | `5120` | no |
 
 ## Outputs
 
@@ -76,7 +76,6 @@ No Modules.
 |------|-------------|
 | database | n/a |
 | server | n/a |
-| storage | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
@@ -91,13 +90,13 @@ For additional context, refer to some of these links.
 
 **Got a question?**
 
-File a GitHub [issue](https://github.com/JamesWoolfenden/terraform-azurerm-sql/issues).
+File a GitHub [issue](https://github.com/JamesWoolfenden/terraform-azurerm-mysql/issues).
 
 ## Contributing
 
 ### Bug Reports & Feature Requests
 
-Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-azurerm-sql/issues) to report any bugs or file feature requests.
+Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-azurerm-mysql/issues) to report any bugs or file feature requests.
 
 ## Copyrights
 
@@ -135,8 +134,8 @@ under the License.
 [github]: https://github.com/jameswoolfenden
 [linkedin]: https://www.linkedin.com/in/jameswoolfenden/
 [twitter]: https://twitter.com/JimWoolfenden
-[share_twitter]: https://twitter.com/intent/tweet/?text=terraform-azurerm-sql&url=https://github.com/JamesWoolfenden/terraform-azurerm-sql
-[share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-azurerm-sql&url=https://github.com/JamesWoolfenden/terraform-azurerm-sql
-[share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-azurerm-sql
-[share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/JamesWoolfenden/terraform-azurerm-sql
-[share_email]: mailto:?subject=terraform-azurerm-sql&body=https://github.com/JamesWoolfenden/terraform-azurerm-sql
+[share_twitter]: https://twitter.com/intent/tweet/?text=terraform-azurerm-mysql&url=https://github.com/JamesWoolfenden/terraform-azurerm-mysql
+[share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-azurerm-mysql&url=https://github.com/JamesWoolfenden/terraform-azurerm-mysql
+[share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-azurerm-mysql
+[share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/JamesWoolfenden/terraform-azurerm-mysql
+[share_email]: mailto:?subject=terraform-azurerm-mysql&body=https://github.com/JamesWoolfenden/terraform-azurerm-mysql
