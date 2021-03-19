@@ -1,4 +1,11 @@
-  infrastructure_encryption_enabled = true
-  public_network_access_enabled     = false
-  ssl_enforcement_enabled           = true
+not done
+  infrastructure_encryption_enabled = true - not sure this required
+
   ssl_minimal_tls_version_enforced  = "TLS1_2"
+
+  threat_detection_policy {
+    enabled              = true - check threat_detection_policy is enabled
+
+done
+  ssl_enforcement_enabled           = true
+  public_network_access_enabled     = false
