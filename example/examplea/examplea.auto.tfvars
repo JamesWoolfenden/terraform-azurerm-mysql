@@ -1,3 +1,3 @@
 common_tags = {
-  "createby" = "Terraform"
-"module" = "terraform-azurerm-mysql" }
+  createdby = "Terraform"
+module = "terraform-azurerm-mysql" }
