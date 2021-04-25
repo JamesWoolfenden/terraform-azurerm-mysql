@@ -1,4 +1,5 @@
 resource "azurerm_mysql_server" "examplea" {
+  #checkov:skip=CKV_AZURE_94
   name                = var.mysqlserver_name
   location            = var.resource_group.location
   resource_group_name = var.resource_group.name
@@ -6,7 +7,7 @@ resource "azurerm_mysql_server" "examplea" {
   administrator_login          = var.admin_name
   administrator_login_password = var.password
 
-  //sku must not be basic as doesnt support encryption so this cannot start with a B
+  //sku must not be basic as doesn't support encryption so this cannot start with a B
   sku_name = var.sku_name
   //must be between 5120 nd 4194304
   storage_mb = var.storage_mb
@@ -17,7 +18,7 @@ resource "azurerm_mysql_server" "examplea" {
   geo_redundant_backup_enabled = false
   //all these items for check
   //defaults to false
-  infrastructure_encryption_enabled = false
+  infrastructure_encryption_enabled = true
   //defaults to true
   public_network_access_enabled = false
   //required

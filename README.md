@@ -39,43 +39,43 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| azurerm | n/a |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | n/a |
 
 ## Modules
 
-No Modules.
+No modules.
 
 ## Resources
 
-| Name |
-|------|
-| [azurerm_mysql_database](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mysql_database) |
-| [azurerm_mysql_server](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mysql_server) |
+| Name | Type |
+|------|------|
+| [azurerm_mysql_database.examplea](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mysql_database) | resource |
+| [azurerm_mysql_server.examplea](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mysql_server) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| account\_replication\_type | n/a | `string` | `"LRS"` | no |
-| account\_tier | n/a | `string` | `"Standard"` | no |
-| admin\_name | n/a | `string` | `"mysqladminun"` | no |
-| auditstore | n/a | `string` | `"exampleaaudit"` | no |
-| common\_tags | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
-| database\_name | n/a | `string` | `"exampleadatabase"` | no |
-| email\_addresses | n/a | `list` | `[]` | no |
-| mysqlserver\_name | n/a | `string` | n/a | yes |
-| password | n/a | `any` | n/a | yes |
-| resource\_group | To supply an Azure resource group object | `any` | n/a | yes |
-| server\_version | n/a | `string` | `"5.7"` | no |
-| sku\_name | n/a | `string` | `"GP_Gen5_2"` | no |
-| storage\_mb | n/a | `number` | `5120` | no |
+| <a name="input_account_replication_type"></a> [account\_replication\_type](#input\_account\_replication\_type) | n/a | `string` | `"LRS"` | no |
+| <a name="input_account_tier"></a> [account\_tier](#input\_account\_tier) | n/a | `string` | `"Standard"` | no |
+| <a name="input_admin_name"></a> [admin\_name](#input\_admin\_name) | n/a | `string` | `"mysqladminun"` | no |
+| <a name="input_auditstore"></a> [auditstore](#input\_auditstore) | n/a | `string` | `"exampleaaudit"` | no |
+| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
+| <a name="input_database_name"></a> [database\_name](#input\_database\_name) | n/a | `string` | `"exampleadatabase"` | no |
+| <a name="input_email_addresses"></a> [email\_addresses](#input\_email\_addresses) | n/a | `list` | `[]` | no |
+| <a name="input_mysqlserver_name"></a> [mysqlserver\_name](#input\_mysqlserver\_name) | n/a | `string` | n/a | yes |
+| <a name="input_password"></a> [password](#input\_password) | n/a | `any` | n/a | yes |
+| <a name="input_resource_group"></a> [resource\_group](#input\_resource\_group) | To supply an Azure resource group object | `any` | n/a | yes |
+| <a name="input_server_version"></a> [server\_version](#input\_server\_version) | n/a | `string` | `"5.7"` | no |
+| <a name="input_sku_name"></a> [sku\_name](#input\_sku\_name) | n/a | `string` | `"GP_Gen5_2"` | no |
+| <a name="input_storage_mb"></a> [storage\_mb](#input\_storage\_mb) | n/a | `number` | `5120` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| database | n/a |
-| server | n/a |
+| <a name="output_database"></a> [database](#output\_database) | n/a |
+| <a name="output_server"></a> [server](#output\_server) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Related Projects
