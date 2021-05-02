@@ -1,5 +1,6 @@
 resource "azurerm_mysql_server" "examplea" {
   #checkov:skip=CKV_AZURE_94
+  #tfsec:ignore:AZU018
   name                = var.mysqlserver_name
   location            = var.resource_group.location
   resource_group_name = var.resource_group.name
