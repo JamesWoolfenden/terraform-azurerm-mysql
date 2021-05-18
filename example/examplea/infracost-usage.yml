@@ -1,0 +1,4 @@
+version: 0.1
+resource_usage:
+  module.mysql.azurerm_mysql_server.examplea:
+    additional_backup_storage_gb: 0
