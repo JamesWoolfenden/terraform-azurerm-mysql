@@ -1,6 +1,6 @@
 # terraform-azurerm-mysql
 
-[![Build Status](https://github.com/JamesWoolfenden/terraform-azurerm-mysql/workflows/Verify%20and%20Bump/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-azurerm-mysql)
+[![Build Status](https://github.com/JamesWoolfenden/terraform-azurerm-mysql/workflows/Verify/badge.svg?branch=master)](https://github.com/JamesWoolfenden/terraform-azurerm-mysql)
 [![Latest Release](https://img.shields.io/github/release/JamesWoolfenden/terraform-azurerm-mysql.svg)](https://github.com/JamesWoolfenden/terraform-azurerm-mysql/releases/latest)
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/JamesWoolfenden/terraform-azurerm-mysql.svg?label=latest)](https://github.com/JamesWoolfenden/terraform-azurerm-mysql/releases/latest)
 ![Terraform Version](https://img.shields.io/badge/tf-%3E%3D0.14.0-blue.svg)
@@ -100,7 +100,7 @@ Please use the [issue tracker](https://github.com/JamesWoolfenden/terraform-azur
 
 ## Copyrights
 
-Copyright 2019-2021 James Woolfenden
+Copyright 2019-2023 James Woolfenden
 
 ## License
 
@@ -131,11 +131,3 @@ under the License.
 
 [jameswoolfenden_homepage]: https://github.com/jameswoolfenden
 [jameswoolfenden_avatar]: https://github.com/jameswoolfenden.png?size=150
-[github]: https://github.com/jameswoolfenden
-[linkedin]: https://www.linkedin.com/in/jameswoolfenden/
-[twitter]: https://twitter.com/JimWoolfenden
-[share_twitter]: https://twitter.com/intent/tweet/?text=terraform-azurerm-mysql&url=https://github.com/JamesWoolfenden/terraform-azurerm-mysql
-[share_linkedin]: https://www.linkedin.com/shareArticle?mini=true&title=terraform-azurerm-mysql&url=https://github.com/JamesWoolfenden/terraform-azurerm-mysql
-[share_reddit]: https://reddit.com/submit/?url=https://github.com/JamesWoolfenden/terraform-azurerm-mysql
-[share_facebook]: https://facebook.com/sharer/sharer.php?u=https://github.com/JamesWoolfenden/terraform-azurerm-mysql
-[share_email]: mailto:?subject=terraform-azurerm-mysql&body=https://github.com/JamesWoolfenden/terraform-azurerm-mysql
